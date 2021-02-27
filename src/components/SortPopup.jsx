@@ -1,22 +1,33 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
-function SortPopup() {
+function SortPopup({items}) {
     const [visiblePopup, setVisiblePopup] = useState(false)
-
+    const [chooseItems, setChooseItems] = useState(0)
+    const sortRef = useRef()
+    const activeLabel = items[chooseItems]
     const toggleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup)
     }
 
     useEffect(() => {
-        document.body.addEventListener('click', () => {
-            console.log('clicked');
-        })
+        document.body.addEventListener('click', handleOutsideClick)
     }, [])
 
+    const handleOutsideClick = (e) => {
+        if (!e.path.includes(sortRef.current)) { // использовать для того чтобы какое либо событие при нажатии на кокой либо обьект сробатывало
+            setVisiblePopup(false)
+        }
+    }
+    const onClickItems = (item) => {
+        setChooseItems(item)
+        setVisiblePopup(false)
+    }
+
     return (
-        <div className="sort">
+        <div ref={sortRef} className="sort">
             <div className="sort__label">
                 <svg
+                    className={visiblePopup?"rotated":''}
                     width="10"
                     height="6"
                     viewBox="0 0 10 6"
@@ -29,17 +40,17 @@ function SortPopup() {
                     />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={toggleVisiblePopup}>популярности</span>
+                <span onClick={toggleVisiblePopup}>{activeLabel}</span>
             </div>
             {visiblePopup && <div className="sort__popup">
                 <ul>
-                    {/*{items && items.map((el, index) => {*/}
-                    {/*    return <li onClick={() => onClickItems(index)}*/}
-                    {/*               key={`${el}_${index}`}*/}
-                    {/*               className={chooseItems === index ? 'active' : ''}>*/}
-                    {/*        {el}*/}
-                    {/*    </li>*/}
-                    {/*})}*/}
+                    {items && items.map((el, index) => {
+                        return <li onClick={() => onClickItems(index)}
+                                   key={`${el}_${index}`}
+                                   className={chooseItems === index ? 'active' : ''}>
+                            {el}
+                        </li>
+                    })}
                 </ul>
             </div>
             }
