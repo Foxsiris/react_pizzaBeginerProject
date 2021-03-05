@@ -10,7 +10,12 @@ const Home = ({items}) => {
             <div className="container">
                 <div className="content__top">
                     <Categories items={['Все', 'Мясные', 'Вегетарианские', 'Гриль', 'Острые', 'Закрытые']}/>
-                    <SortPopup items={['Популярности', 'Цена', 'Алфавит']}/>
+                    <SortPopup items={[
+                        {name:'Популярности',type:'popylar'},
+                        {name:'Цена',type:'price'},
+                        {name: 'Алфавит',type: 'alphabet'}
+
+                    ]}/>
                 </div>
                 <h2 className="content__title">Все пиццы</h2>
                 <div className="content__items">
