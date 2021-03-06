@@ -1,34 +1,52 @@
 {
-    "pizzas": [
-        {
-            "id": 0,
-            "imageURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/5dffe4c7d3bc49668f50c1d08d920992_584x584.jpeg",
-            "name": "Паперони",
-            "types": [0,1],
-            "sizes": [26,30,40],
-            "price": 800,
-            "category": 0,
-            "rating": 4
-        },
-        {
-            "id": 1,
-            "imageURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/598583c68073460db440aed323ff50e7_584x584.jpeg",
-            "name": "Четыре сыра",
-            "types": [0],
-            "sizes": [26,40],
-            "price": 600,
-            "category": 0,
-            "rating": 4
-        },
-        {
-            "id": 2,
-            "imageURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/362468e7-e8d3-4fda-ab66-91f4dbd56122.jpg",
-            "name": "Сицилийская",
-            "types": [0,1],
-            "sizes": [26,30],
-            "price": 700,
-            "category": 0,
-            "rating": 4
-        }
-    ]
+  "pizzas": [
+    {
+      "id": 0,
+      "imageURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/5dffe4c7d3bc49668f50c1d08d920992_584x584.jpeg",
+      "name": "Паперони",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 800,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/598583c68073460db440aed323ff50e7_584x584.jpeg",
+      "name": "Четыре сыра",
+      "types": [
+        0
+      ],
+      "sizes": [
+        26,
+        40
+      ],
+      "price": 600,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "imageURL": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/362468e7-e8d3-4fda-ab66-91f4dbd56122.jpg",
+      "name": "Сицилийская",
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        26,
+        30
+      ],
+      "price": 700,
+      "category": 0,
+      "rating": 4
+    }
+  ]
 }
